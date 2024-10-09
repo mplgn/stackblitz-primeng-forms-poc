@@ -2,7 +2,7 @@
   <form #widgetForm="ngForm" (ngSubmit)="saveWidget(widgetForm)">
     <div class="widget-field">
       <label for="favColor" class="field-label">Color</label>
-      <p-select
+      <p-select 
         id="favColor"
         class="w-4/6"
         #favColor="ngModel"
@@ -14,6 +14,8 @@
         placeholder="Select favorite color"
         name="favColor"
         [required]="true"
+        [class.ng-dirty]="favColor.dirty"
+        [class.ng-invalid]="favColor.invalid"
       ></p-select>
     </div>
 
@@ -30,7 +32,7 @@
           dateFormat="M yy"
           name="docDate"
         ></p-datePicker>
-        <label for="docDate">(Month and Year)</label>
+        <label for="docDate">Select Month and Year</label>
       </p-floatlabel>
     </div>
 
@@ -52,3 +54,5 @@
     <button type="submit" class="upload-button">SAVE</button>
   </form>
 </div>
+
+<pre>{{ newWidget | json }}</pre>
