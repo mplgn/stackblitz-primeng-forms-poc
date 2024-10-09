@@ -49,7 +49,7 @@ export class AppComponent {
   };
 
   saveWidget(form: NgForm) {
-    console.log('saveWiget', form);
+    console.log('saveWidget', form);
     console.log('form.controls', form.controls);
   }
 }
