@@ -6,12 +6,12 @@
         id="favColor"
         class="w-4/6"
         #favColor="ngModel"
-        [(ngModel)]="newWidget.favoriteColor"
+        [(ngModel)]="newWidget.selectedColor"
         [options]="colors"
         [showClear]="true"
         optionLabel="name"
         optionValue="value"
-        placeholder="Select favorite color"
+        placeholder="Select color"
         name="favColor"
         [required]="true"
         [class.ng-dirty]="favColor.dirty"
@@ -20,19 +20,20 @@
     </div>
 
     <div class="widget-field">
-      <label for="docDate" class="field-label">Date</label>
+      <label for="favDate" class="field-label">Date</label>
       <p-floatlabel>
-        <!-- TODO: replace with separate Month, Year controls if DatePicker bug not resolved before testing -->
-        <p-datePicker
-          id="docDate"
-          [(ngModel)]="newWidget.favoriteDate"
+         <p-datePicker
+          id="favDate"
+          [(ngModel)]="newWidget.selectedDate"
           [showIcon]="true"
           view="month"
           baseZIndex="9999"
           dateFormat="M yy"
-          name="docDate"
+          name="favDate"
+          [required]="true"
+          [showClear]="true"
         ></p-datePicker>
-        <label for="docDate">Select Month and Year</label>
+        <label for="favDate">Select Month and Year</label>
       </p-floatlabel>
     </div>
 
@@ -46,8 +47,9 @@
           cols="52"
           [(ngModel)]="newWidget.comment"
           name="comment"
+          [required]="true"
         ></textarea>
-        <label for="comment">Enter comment (optional)</label>
+        <label for="comment">Enter comment</label>
       </p-floatlabel>
     </div>
 

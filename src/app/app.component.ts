@@ -43,9 +43,9 @@ export class AppComponent {
   ];
 
   newWidget: Widget = {
+    selectedColor: null,
+    selectedDate: null,
     comment: '',
-    favoriteDate: null,
-    favoriteColor: null,
   };
 
   saveWidget(form: NgForm) {
@@ -55,7 +55,7 @@ export class AppComponent {
 }
 
 type Widget = {
+  selectedColor: number | null;
+  selectedDate: Date | null;
   comment: string;
-  favoriteDate: Date | null;
-  favoriteColor: number | null;
 };
