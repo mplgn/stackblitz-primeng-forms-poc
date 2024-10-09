@@ -1,3 +1,7 @@
+#container {
+  padding: 28px
+}
+
 .widget-field {
   display: flex;
   flex-direction: row;
