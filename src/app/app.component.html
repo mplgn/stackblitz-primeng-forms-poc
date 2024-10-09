@@ -2,21 +2,25 @@
   <form #widgetForm="ngForm" (ngSubmit)="saveWidget(widgetForm)">
     <div class="widget-field">
       <label for="favColor" class="field-label">Color</label>
-      <p-select 
-        id="favColor"
-        class="w-4/6"
-        #favColor="ngModel"
-        [(ngModel)]="newWidget.selectedColor"
-        [options]="colors"
-        [showClear]="true"
-        optionLabel="name"
-        optionValue="value"
-        placeholder="Select color"
-        name="favColor"
-        [required]="true"
-        [class.ng-dirty]="favColor.dirty"
-        [class.ng-invalid]="favColor.invalid"
-      ></p-select>
+      <p-floatlabel>
+        <p-select 
+          id="favColor"
+          class="w-4/6"
+          #favColor="ngModel"
+          [(ngModel)]="newWidget.selectedColor"
+          [options]="colors"
+          [showClear]="true"
+          optionLabel="name"
+          optionValue="value"
+          placeholder="Select color"
+          name="favColor"
+          inputId="favColor"
+          [required]="true"
+          [class.ng-dirty]="favColor.dirty"
+          [class.ng-invalid]="favColor.invalid"
+        ></p-select>
+        <label for="favColor">Select a color</label>
+      </p-floatlabel>
     </div>
 
     <div class="widget-field">
