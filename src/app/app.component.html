@@ -1,0 +1,54 @@
+<div style="padding:28px">
+  <form #widgetForm="ngForm" (ngSubmit)="saveWidget(widgetForm)">
+    <div class="widget-field">
+      <label for="favColor" class="field-label">Color</label>
+      <p-select
+        id="favColor"
+        class="w-4/6"
+        #favColor="ngModel"
+        [(ngModel)]="newWidget.favoriteColor"
+        [options]="colors"
+        [showClear]="true"
+        optionLabel="name"
+        optionValue="value"
+        placeholder="Select favorite color"
+        name="favColor"
+        [required]="true"
+      ></p-select>
+    </div>
+
+    <div class="widget-field">
+      <label for="docDate" class="field-label">Date</label>
+      <p-floatlabel>
+        <!-- TODO: replace with separate Month, Year controls if DatePicker bug not resolved before testing -->
+        <p-datePicker
+          id="docDate"
+          [(ngModel)]="newWidget.favoriteDate"
+          [showIcon]="true"
+          view="month"
+          baseZIndex="9999"
+          dateFormat="M yy"
+          name="docDate"
+        ></p-datePicker>
+        <label for="docDate">(Month and Year)</label>
+      </p-floatlabel>
+    </div>
+
+    <div class="widget-field">
+      <label for="comment" class="field-label">Comment</label>
+      <p-floatlabel>
+        <textarea
+          pTextarea
+          id="comment"
+          rows="3"
+          cols="52"
+          [(ngModel)]="newWidget.comment"
+          name="comment"
+        ></textarea>
+        <label for="comment">Enter comment (optional)</label>
+      </p-floatlabel>
+    </div>
+
+    <button type="submit" class="upload-button">SAVE</button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+.widget-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+  margin-bottom: 28px;
+}
+
+.field-label {
+  width: 15%;
+  margin-right: 20px;
+}
